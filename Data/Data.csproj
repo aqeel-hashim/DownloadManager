@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.13" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\DataAccess\" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
