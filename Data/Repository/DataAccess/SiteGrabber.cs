@@ -42,7 +42,7 @@ namespace Data.Repository.DataAccess
             Trace.WriteLine(doc.DocumentNode.ChildNodes.Descendants("video").Count());
             var descendantsList = type == File.Type.Image ? doc.DocumentNode.Descendants("img") : doc.DocumentNode.Descendants("video");
             // For every tag in the HTML containing the node img.
-            foreach (var link in doc.DocumentNode.Descendants("img")
+            foreach (var link in descendantsList
                 .Select(i => !string.IsNullOrEmpty(i.Attributes["src"].Value) ? i.Attributes["src"] : i.Attributes["source"]))
             {
                 // Storing all links found in an array.
@@ -56,7 +56,7 @@ namespace Data.Repository.DataAccess
                     editedUrl += link.Value;
                 }
                
-                var file = new FileEntity(editedUrl, null);
+                var file = new FileEntity(editedUrl, null, type);
                 siteEntity.FileEntitys.Add(file);
             }
 

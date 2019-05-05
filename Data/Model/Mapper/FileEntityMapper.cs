@@ -11,7 +11,7 @@ namespace Data.Model.Mapper
         public File Transform(FileEntity fileEntity)
         {
             var file = new File(fileEntity.Url, fileEntity.Url.Split('/').Last().Split('?')[0],
-                fileEntity.Url.Split('.').Last(), fileEntity.Location) {Id = fileEntity.Id};
+                fileEntity.Url.Split('.').Last(), fileEntity.Location, fileEntity.Type) {Id = fileEntity.Id};
             return file;
         }
 

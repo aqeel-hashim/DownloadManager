@@ -47,6 +47,12 @@ namespace Domain.Model
             set => _location = value;
         }
 
+        public Type FileType
+        {
+            get => _fileType;
+            set => _fileType = value;
+        }
+
         public File(string url, string name, string ext, string location, Type fileType)
         {
             Interlocked.Increment(ref _id);
@@ -59,7 +65,10 @@ namespace Domain.Model
 
         protected bool Equals(File other)
         {
-            return _id == other._id && string.Equals(_url, other._url) && string.Equals(_name, other._name) && string.Equals(_ext, other._ext) && string.Equals(_location, other._location) && _fileType == other._fileType;
+            return _id == other._id && string.Equals(_url, other._url)
+                                    && string.Equals(_name, other._name) 
+                                    && string.Equals(_ext, other._ext) 
+                                    && string.Equals(_location, other._location) && _fileType == other._fileType;
         }
 
         public override bool Equals(object obj)
@@ -86,7 +95,10 @@ namespace Domain.Model
 
         public override string ToString()
         {
-            return $"{nameof(_id)}: {_id}, {nameof(_url)}: {_url}, {nameof(_name)}: {_name}, {nameof(_ext)}: {_ext}, {nameof(_location)}: {_location}, {nameof(_fileType)}: {_fileType}";
+            return $"{nameof(_id)}: {_id}, " +
+                   $"{nameof(_url)}: {_url}, " +
+                   $"{nameof(_name)}: {_name}, {nameof(_ext)}: {_ext}, " +
+                   $"{nameof(_location)}: {_location}, {nameof(_fileType)}: {_fileType}";
         }
     }
 }

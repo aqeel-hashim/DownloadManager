@@ -8,7 +8,7 @@ namespace Domain.Repository
     public abstract class DownloadProcessor
     {
         private File _file;
-        private IDownloadListner _downloadListner;
+        protected IDownloadListner _downloadListner;
         public File File
         {
             get => _file;

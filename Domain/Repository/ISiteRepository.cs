@@ -1,6 +1,4 @@
-﻿
-
-using Domain.Model;
+﻿using Domain.Model;
 
 namespace Domain.Repository
 {

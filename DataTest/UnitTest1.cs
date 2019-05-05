@@ -12,8 +12,8 @@ namespace DataTest
         [TestMethod]
         public void DataSiteGrabberTest()
         {
-            var grabber = new SiteGrabber(@"https://vimeo.com/253530307");
-            var entity = grabber.Site(File.Type.Image);
+            var grabber = new SiteGrabber(@"https://www.youtube.com/watch?v=c9X3kP3fd4Y");
+            var entity = grabber.Site(File.Type.Video);
             foreach (var entityFileEntity in entity.FileEntitys)
             {
                 Trace.WriteLine(entityFileEntity.Url);

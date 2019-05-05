@@ -7,11 +7,11 @@ namespace Domain.Repository
 {
     public interface IDownloadListner
     {
-        void Start(File file);
-        void Update(File file, int progress);
-        void Pause(File file, int progress);
-        void Resume(File file, int progress);
-        void Cancel(File file, int progress);
-        void Complete(File file, int progress);
+        void Start();
+        void Update(int progress);
+        void Pause(int progress);
+        void Resume(int progress);
+        void Cancel(int progress);
+        void Complete(int progress);
     }
 }
